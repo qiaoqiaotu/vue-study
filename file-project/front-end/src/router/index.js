@@ -1,29 +1,41 @@
+/*
+ * @Description: Description
+ * @Version: 1.0
+ * @Autor: WangQiaoLing
+ * @Date: 2020-07-06 21:41:12
+ * @LastEditors: WangQiaoLing
+ * @LastEditTime: 2020-07-27 22:30:18
+ */
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-
+import App from '../App.vue'
+import New from '../views/New.vue'
+import UploadFile from '../views/UploadFile.vue'
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'App',
+    component: App,
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    path: '/new',
+    name: 'New',
+    component: New,
+  },
+  {
+    path: '/file',
+    name: UploadFile,
+    component: UploadFile,
+  },
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
 })
 
 export default router
